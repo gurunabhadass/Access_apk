@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101827">
+<title>AccessOne — App Information</title>
+<style>
+:root{--bg:#0b1220;--panel:#121d2e;--text:#f4f7fb;--muted:#9aa9bd;--blue:#4f8cff;--blue2:#2868e8;--line:rgba(255,255,255,.09)}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;color:var(--text);background:radial-gradient(ellipse at 50% -10%,rgba(57,119,232,.22),transparent 48%),var(--bg);font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif}
+.page{width:min(100% - 30px,520px);margin:auto;padding:28px 0 36px}.topline{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.brand{display:flex;align-items:center;gap:9px;color:#cbd8ec;font-size:13px;font-weight:700;letter-spacing:.12em}.dot{width:8px;height:8px;border-radius:50%;background:#35c98a;box-shadow:0 0 14px #35c98a}
+.pill{border:1px solid var(--line);background:#ffffff08;color:var(--muted);padding:7px 11px;border-radius:30px;font-size:11px}
+.hero{text-align:center;padding:27px 20px 24px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(155deg,#1f334e,#111c2d);box-shadow:0 22px 60px #0004}
+.logo{width:104px;height:104px;margin:0 auto 17px;border-radius:26px;display:grid;place-items:center;overflow:hidden;background:linear-gradient(145deg,#397df0,#1749a7);border:1px solid #ffffff33;box-shadow:0 12px 32px #2868e855}
+.logo img{width:100%;height:100%;object-fit:cover}.fallback{font-size:31px;font-weight:800}
+h1{margin:0;font-size:30px;letter-spacing:-.8px}.tagline{color:var(--muted);font-size:13px;margin:8px 0 19px}
+.download{
+  position:relative;display:flex;align-items:center;justify-content:center;gap:12px;
+  width:100%;min-height:62px;padding:15px 20px;border-radius:18px;overflow:hidden;
+  text-decoration:none;color:#fff;font-weight:850;font-size:15px;letter-spacing:.2px;
+  background:linear-gradient(110deg,#2583ff 0%,#1769ed 48%,#0d4fc7 100%);
+  border:1px solid rgba(255,255,255,.24);
+  box-shadow:0 12px 28px rgba(23,105,237,.38),inset 0 1px 0 rgba(255,255,255,.25);
+  transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;
+  isolation:isolate;
+}
+.download:before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(115deg,transparent 15%,rgba(255,255,255,.19) 48%,transparent 75%);
+  transform:translateX(-120%);transition:transform .65s ease;
+}
+.download:hover:before{transform:translateX(120%)}
+.download:hover{transform:translateY(-2px);filter:brightness(1.08);box-shadow:0 16px 34px rgba(35,101,232,.43),inset 0 1px 0 rgba(255,255,255,.3)}
+.download:active{transform:scale(.985)}
+.download-icon{width:22px;height:22px;flex:0 0 22px}
+.download-copy{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
+.download-main{font-size:15px;line-height:1.1}
+.download-sub{font-size:10px;font-weight:600;letter-spacing:.25px;color:rgba(255,255,255,.78)}
+.download-arrow{margin-left:auto;font-size:22px;font-weight:400;line-height:1}
+.download.disabled{opacity:.62;pointer-events:none;filter:saturate(.75);box-shadow:none}
+.note{color:#9fb1c9;font-size:11px;margin:10px 0 0}
+.section{margin-top:23px}.section h2{font-size:15px;font-weight:800;margin:0 0 12px}
+.details{display:grid;grid-template-columns:1fr 1fr;gap:10px}.detail{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:13px 14px}
+.detail span{display:block;color:var(--muted);font-size:11px;margin-bottom:6px}.detail strong{display:block;font-size:13px;line-height:1.35}
+.description{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:16px;color:#c4d0df;font-size:13px;line-height:1.7}
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.shot{aspect-ratio:9/16;border-radius:15px;overflow:hidden;position:relative;border:1px solid #ffffff22;background:linear-gradient(160deg,#263c59,#111c2d);display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;color:#91a5c0;font-size:11px}
+.shot img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.developer{background:linear-gradient(145deg,#17263a,#111b2b);border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;align-items:center;gap:13px}
+.avatar{width:52px;height:52px;flex:0 0 52px;border-radius:15px;overflow:hidden;display:grid;place-items:center;background:#4f8cff29;color:#8db5ff;font-weight:900;font-size:17px}.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.devname{font-size:14px;font-weight:800}.devlabel{color:var(--muted);font-size:11px;margin-top:4px}
+footer{text-align:center;color:#71839c;font-size:10px;padding:24px 0 0}
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="topline"><div class="brand"><i class="dot"></i>Download The App</div><div class="pill">VERSION 1.0.0</div></div>
+  <section class="hero">
+    <div class="logo"><img src="logo.png" alt="AccessOne logo" onerror="this.style.display='none';this.parentElement.innerHTML='<span class=&quot;fallback&quot;>A1</span>'"></div>
+    <h1>AccessOne</h1><p class="tagline">Smart Employee Access &amp; Attendance</p>
+    <a class="download disabled" id="downloadButton" href="#" aria-disabled="true">
+      <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4"/><path d="M5 16.5V20h14v-3.5"/></svg>
+      <span class="download-copy"><span class="download-main">Download APK</span><span class="download-sub">Secure app download</span></span>
+      <span class="download-arrow" aria-hidden="true">›</span>
+    </a>
+    <p class="note" id="downloadNote">APK download will be available soon.</p>
+  </section>
+  <section class="section"><h2>App Information</h2><div class="details">
+    <div class="detail"><span>App Name</span><strong>AccessOne</strong></div>
+    <div class="detail"><span>App Size</span><strong id="appSize">To be updated</strong></div>
+    <div class="detail"><span>App Type</span><strong>Access Control &amp; Attendance</strong></div>
+    <div class="detail"><span>Version</span><strong>1.0.0</strong></div>
+  </div></section>
+  <section class="section"><h2>About the App</h2><div class="description">AccessOne is an employee access and attendance application that uses face recognition to support employee verification and Login/Logout records. It provides employee information, access history, activity records and administrative tools in one place.</div></section>
+  <section class="section"><h2>App Screenshots</h2><div class="shots">
+    <div class="shot"><img src="access1.jpg" alt="AccessOne screenshot 1" onerror="this.remove()">Screenshot 1</div>
+    <div class="shot"><img src="access2.jpg" alt="AccessOne screenshot 2" onerror="this.remove()">Screenshot 2</div>
+    <div class="shot"><img src="access3.jpg" alt="AccessOne screenshot 3" onerror="this.remove()">Screenshot 3</div>
+  </div></section>
+  <section class="section"><h2>Developer Information</h2><div class="developer"><div class="avatar"><img src="Devoloper.png" alt="Developer photo" onerror="this.style.display='none';this.parentElement.textContent='SO'"></div><div><div class="devname">Suva Oscar</div><div class="devlabel">Developer · AccessOne</div></div></div></section>
+  <footer>© 2026 AccessOne. All rights reserved.</footer>
+</main>
+<script>
+/* After uploading the APK, paste its direct GitHub Releases URL below and enter the real APK size. */
+const APK_DOWNLOAD_URL = "https://github.com/gurunabhadass/Access_one/releases/latest/download/AccessOne.apk";
+const APK_FILE_SIZE = "";
+const button=document.getElementById("downloadButton");
+if(APK_FILE_SIZE.trim()) document.getElementById("appSize").textContent=APK_FILE_SIZE;
+if(APK_DOWNLOAD_URL.trim()){
+  button.href=APK_DOWNLOAD_URL;button.classList.remove("disabled");button.removeAttribute("aria-disabled");
+  document.getElementById("downloadNote").textContent="Download the latest AccessOne APK.";
+}
+</script>
+</body>
+</html>
